@@ -29,7 +29,7 @@ public class DesignTacoController {
   private final IngredientRepository ingredientRepo;
 
   @Autowired
-  public DesignTacoController (IngredientRepository ingredientRepo) {
+  public DesignTacoController(IngredientRepository ingredientRepo) {
     this.ingredientRepo = ingredientRepo;
   }
 
