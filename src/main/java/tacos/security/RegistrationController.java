@@ -10,6 +10,7 @@ import tacos.data.UserRepository;
 @Controller
 @RequestMapping("/register")
 public class RegistrationController {
+
     private UserRepository userRepo;
     private PasswordEncoder passwordEncoder;
 
@@ -29,4 +30,5 @@ public class RegistrationController {
         userRepo.save(form.toUser(passwordEncoder));
         return "redirect:/login";
     }
+
 }
