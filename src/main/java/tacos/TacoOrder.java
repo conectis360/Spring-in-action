@@ -8,18 +8,23 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.CreditCardNumber;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 
 @Data
-@Document
+@Entity
+@Table(name="Taco_Order")
 public class TacoOrder implements Serializable {
 
   private static final long serialVersionUID = 1L;
   @Id
   private String id;
   private Date placedAt = new Date();
+
+  @ManyToOne
+  private User user;
 
   @NotBlank(message = "Delivery name is required")
   private String deliveryName;
